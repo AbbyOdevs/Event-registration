@@ -1,0 +1,15 @@
+{
+  "events": [],
+  "categories": [],
+  "registrations": [],
+  "users": [
+    {
+      "id": "usrb8e8b1c13136",
+      "student_id": "0125-0174",
+      "name": "Abigail Odevilas",
+      "email": "odevilasa5@gmail.com",
+      "passwordHash": "scrypt:32768:8:1$aG1gmlkj7WoKRMvz$67e44729d11866721293ad160f287ae0fcdb0fc7e7fabd20ff9916c97d3be398d64f42bf90f72ee5868d95e0aa0f1e3e7ac213194f0f78cceaf4b95395eb439e",
+      "createdAt": "2026-10-16T12:14:46.733804+00:00"
+    }
+  ]
+}
