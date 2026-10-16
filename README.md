@@ -1,50 +1,74 @@
-# Gate — Event Registration (Flask)
+GATE Event Hub
 
-A small, self-contained event registration app: browse events, register with
-a simulated payment step, and get a ticket. Anyone with access to the running
-app sees the same event list and live spot counts; each visitor's own
-tickets are tracked separately (via a session cookie), so "My Tickets" only
-shows what *they* registered for.
+Event Management and Registration System
 
-## Run it
+GATE Event Hub is a web-based event management system built with Flask and Python. It allows administrators to manage events, monitor participant registrations, and track attendance, while participants can create accounts, browse available events, and reserve their spots.
 
-```bash
-pip install -r requirements.txt
-python app.py
-```
+Features
 
-Then open **http://localhost:5000** in a browser. To let other people on
-your network join, replace `localhost` with your machine's local IP address
-(the server already binds to `0.0.0.0`).
+Admin Panel
 
-## Admin password
+Dashboard with event and registration statistics
 
-Adding new events requires a password, currently `gate2026`. Change it
-before sharing the app with anyone by setting an environment variable:
+Create, view, edit, and delete events
 
-```bash
-export ADMIN_PASSWORD="your-own-password"
-python app.py
-```
+Manage participant accounts
 
-## Data storage
+View event registrations
 
-Events and tickets are stored in `data.json` in this folder — it's created
-automatically on first run, seeded with a few sample events. Delete it any
-time to reset the app back to the sample data.
+Monitor and update attendance status
 
-This is a simple flat-file store meant for local or small-scale use (a
-single lock protects concurrent writes). It is **not** built for high
-concurrency or production traffic — if you outgrow it, swap `_load_data` /
-`_save_data` in `app.py` for a real database (SQLite is a natural next
-step).
+Search and manage event information
 
-## Notes
+Participant Portal
 
-- Payment is fully simulated — card fields are validated for shape only,
-  nothing is ever charged.
-- `SECRET_KEY` (used to sign session cookies) also defaults to a dev value —
-  set your own via the `SECRET_KEY` environment variable before deploying
-  anywhere other people can reach.
-- There's no real user accounts/auth here — "My Tickets" is tied to an
-  anonymous session cookie, not a login.
+Participant account registration and login
+
+Browse upcoming events
+
+Search and filter events by category
+
+View event details and available slots
+
+Reserve spots for events
+
+View and cancel eligible reservations
+
+View profile and attendance information
+
+Security and Access Control
+
+Separate administrator and participant access
+
+Session-based authentication
+
+Password handling through the application's authentication system
+
+Server-side API routes for application operations
+
+Sensitive configuration managed through environment variables
+
+Technology Stack
+
+Backend: Python, Flask
+
+Frontend: HTML, CSS, JavaScript
+
+Data Storage: JSON
+
+Deployment: Render
+
+WSGI Server: Gunicorn
+
+Project Structure
+
+GATE-Event-Hub/
+├── app.py
+├── data.json
+├── requirements.txt
+├── templates/
+│   ├── index.html
+│   └── admin.html
+└── static/
+    ├── styles.css
+    └── script.js
